@@ -1,0 +1,32 @@
+{
+  "name": "react-boilerplate",
+  "description": "ReactJS Boilerplate",
+  "main": "index.js",
+  "authors": [
+    "Sagar Patke <sagarpatke@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "ReactJS",
+    "boilerplate",
+    "reactt",
+    "material-ui",
+    "bower",
+    "socket.io",
+    "gulp",
+    "webpack"
+  ],
+  "homepage": "https://github.com/sagarpatke",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-roboto": "^0.0.2"
+  }
+}
