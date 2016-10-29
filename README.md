@@ -10,3 +10,5 @@ Development allows the user to keep a development server running, so that he can
 After cloning the repository, run ```npm run build```
 
 To start server in development mode, execute ```npm run serve``` in the project's home directory. The app can then be accessed at [http://localhost:8080](http://localhost:8080)
+
+__Note__: ```npm start``` doesn't serve static directory when run from the project root. First, build the project, and then execute ```npm install --production```, then ```npm start --production``` from the ```dist``` directory.
