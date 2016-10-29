@@ -9,5 +9,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NavBar from './components/NavBar';
 
 ReactDOM.render(<MuiThemeProvider>
-    <NavBar />
+    <div>
+      <NavBar />
+      <small>This is the content area.</small>
+    </div>
   </MuiThemeProvider>, document.getElementById('content'));

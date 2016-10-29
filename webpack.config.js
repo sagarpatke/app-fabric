@@ -1,7 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/app',
+  entry: {
+    app: ['./client/app']
+  },
   output: {
     path: path.join(__dirname,'client','assets'),
     publicPath: '/assets/',
