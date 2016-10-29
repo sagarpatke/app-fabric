@@ -5,7 +5,7 @@ module.exports = {
     app: ['./client/app']
   },
   output: {
-    path: path.join(__dirname,'client','assets'),
+    path: path.join(__dirname, 'client', 'assets'),
     publicPath: '/assets/',
     filename: 'bundle.js'
   },
@@ -16,6 +16,6 @@ module.exports = {
     }]
   },
   resolve: {
-    extensions: ['','.jsx','.js','/index','/index.jsx','/index.js']
+    extensions: ['', '.jsx', '.js', '/index', '/index.jsx', '/index.js']
   }
-}
+};
