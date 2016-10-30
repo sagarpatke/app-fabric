@@ -12,6 +12,10 @@ function setupStaticRoutes(app) {
   return app;
 }
 
+function setupMiddlewares(app) {
+  app.use(require('cookie-parser')());
+}
+
 function setupRestRoutes(app) {
   app.use('/api/v1', require(path.join(__dirname, 'api')));
   return app;
@@ -28,6 +32,7 @@ module.exports = function(inputApp, inputOptions) {
   }
 
   if(options.rest) {
+    setupMiddlewares(app);
     setupRestRoutes(app);
   }
 
