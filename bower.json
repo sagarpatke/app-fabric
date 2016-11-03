@@ -27,6 +27,7 @@
     "tests"
   ],
   "dependencies": {
-    "font-roboto": "^0.0.2"
+    "font-roboto": "^0.0.2",
+    "flexboxgrid": "^6.3.2"
   }
 }

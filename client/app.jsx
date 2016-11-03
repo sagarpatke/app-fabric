@@ -10,6 +10,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import LoginView from './views/LoginView';
 import DashboardView from './views/DashboardView';
+import DeployView from './views/DeployView';
 
 function redirectIfLoggedIn(nextState, replace, next) {
   const token = cookie.load('token');
@@ -27,5 +28,6 @@ ReactDOM.render(<MuiThemeProvider>
     <Router history={hashHistory}>
       <Route path="/" component={LoginView} onEnter={redirectIfLoggedIn}/>
       <Route path="/dashboard" component={DashboardView} onEnter={redirectIfNotLoggedIn}/>
+      <Route path="/deploy" component={DeployView} onEnter={redirectIfNotLoggedIn} />
     </Router>
   </MuiThemeProvider>, document.getElementById('content'));

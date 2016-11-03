@@ -55,9 +55,7 @@ module.exports = {
     );
   },
   me: function(req, res) {
-    const token = req.cookies.token;
-    if(!token) { res.status(404).send(); return; }
-    const claims = jsonwebtoken.verify(token, config.JWT_SECRET);
+    const claims = req.claims;
     getUser(claims.accessToken, function(err, user) {
       if(err) { res.status(500).err(err); return; }
       res.json(user);

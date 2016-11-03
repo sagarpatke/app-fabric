@@ -5,11 +5,12 @@ import request from 'superagent';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import ActionExitToApp from 'material-ui/svg-icons/action/exit-to-app';
 import Avatar from 'material-ui/Avatar';
+import ActionExitToApp from 'material-ui/svg-icons/action/exit-to-app';
+import HardwareDesktopWindows from 'material-ui/svg-icons/hardware/desktop-windows';
 
 const styles = {
-  drawer: {
+  drawerAvatar: {
     textAlign: 'center'
   },
   avatar: {
@@ -69,13 +70,20 @@ export default class NavBar extends React.Component {
           docked={false}
           onRequestChange={() => { this.setState({drawerOpen: false}); }}
           style={styles.drawer} >
+            <div style={styles.drawerAvatar}>
             { this.state.user ?
               <Avatar src={this.state.user.avatar_url} size={230} style={styles.avatar}/> :
               null }
+            </div>
+            <MenuItem
+              leftIcon={<HardwareDesktopWindows />}
+              onTouchTap={() => { this.context.router.push('/deploy'); }}>
+                Deploy
+            </MenuItem>
             <MenuItem
               leftIcon={<ActionExitToApp />}
               onTouchTap={this.handleLogout.bind(this)}>
-              Logout
+                Logout
             </MenuItem>
         </Drawer>
       </div>
