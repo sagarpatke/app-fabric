@@ -8,6 +8,7 @@ const minifyCss = require('gulp-minify-css');
 const clean = require('gulp-clean');
 const flatten = require('gulp-flatten');
 const eslint = require('gulp-eslint');
+const htmlhint = require('gulp-htmlhint');
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
@@ -63,6 +64,12 @@ gulp.task('eslint', function() {
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
+});
+
+gulp.task('htmlhint', function() {
+  return gulp.src(['client/**/*.html','!client/bower_components/**/*'])
+  .pipe(htmlhint({htmlhintrc: ".htmlhintrc"}))
+  .pipe(htmlhint.failReporter());
 });
 
 gulp.task('webpack-dev-server', ['eslint'], function() {
